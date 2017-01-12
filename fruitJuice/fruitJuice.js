@@ -21,14 +21,18 @@ Complete the functions in order to provide this functionality.
 */
 
 function Jar() {
- this.volume = 0 ;
- this.obj = {} ;
+	this.volume = 0 ;
+	this.obj = {} ;
 }
 
 
 Jar.prototype.add = function(amount , fruit){
+	if(this.obj[fruit]){
+		this.obj[fruit] += amount 
+	}else {
+		this.obj[fruit] = amount
+	} 
 	this.volume += amount ; 
-	this.obj[fruit] = amount 
 }
 
 Jar.prototype.getConcentration = function (fruit){
