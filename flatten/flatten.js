@@ -12,8 +12,8 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 
 */
 
-// function flatten(){
-// 	var array = Array.from(arguments)
+// function flatten(input){
+// 	var array = input || Array.from(arguments)
 // 	var arr =[] ;	
 // 	for (var i = 0; i < array.length; i++) {
 // 		arr.push(array[i])
@@ -28,10 +28,29 @@ flatten('a', ['b', 2], 3, null, [[4], ['c']]) // returns ['a', 'b', 2, 3, null, 
 // }
 
 
-function flatten(input) {
-	var array = input || Array.from(arguments)
-  return array.reduce(function(memo, el) {
-    var items = Array.isArray(el) ? flatten(el) : [el];
-    return memo.concat(items);
-  }, []);
+// function flatten(input) {
+// 	var array = input || Array.from(arguments)
+//   return array.reduce(function(memo, el) {
+//     var items = Array.isArray(el) ? flatten(el) : [el];
+//     return memo.concat(items);
+//   }, []);
+// }
+
+function flatten(){
+	var args = Array.prototype.slice.call(arguments);
+	var finalArr = [];
+	for (var i = 0; i < args.length; i++) {
+		if (Array.isArray(args[i])) {
+			for (var j = 0; j < args[i].length; j++) {
+				if (Array.isArray(args[i][j])) {
+					finalArr = finalArr.concat(flatten(args[i][j]));			
+				}else{
+					finalArr.push(args[i][j])		
+				}
+			}
+		}else{
+			finalArr.push(args[i])
+		}	
+	}
+	return finalArr;
 }
