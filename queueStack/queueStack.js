@@ -50,6 +50,6 @@
 
    // should return the number of items in the queue
    this.size = function(){
-   	return outbox.size()
+   	return outbox.size() + inbox.size()
    };
 };
