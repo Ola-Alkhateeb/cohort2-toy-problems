@@ -75,7 +75,7 @@ nextBigger(111)==-1
 nextBigger(531)==-1
 */
 
-function nextBigger(num){ // time complexity O(c) 
+function nextBigger(num){ // time complexity O(1) 
 var str = num.toString().split("") ;
 var lastIndex = str[str.length-1] ;
 var index= str[str.length-2] ;
