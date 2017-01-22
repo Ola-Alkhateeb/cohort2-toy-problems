@@ -21,6 +21,104 @@ var solvedBoard = [[0,1,1],
 ticTacToe(solvedBoard);//should return 1
 */
 
+
 function ticTacToe(board){
-	
+	var x = 1;
+	var o = 2 ; 
+	for (var i = 0; i < board.length; i++) {
+		if(checkRows(board[i]) === x || checkCol(i , board) === x || majorDiagonal(board) === x || minorDiagonal(board) === x) {
+			return x ;
+		} else if(checkRows(board[i]) === o || checkCol(i , board) === o || majorDiagonal(board) === o || minorDiagonal(board) === o){
+			return o ;
+		}
+	}
+
+	return -1; 
 };
+
+
+function checkRows(row){
+	var x= 0 ;
+	var o = 0 ; 
+	for (var i = 0; i < row.length; i++) {
+		if(row[i]=== 1){
+			x++
+		}
+		if(row[i]===2){
+			o++
+		}
+	}
+	if(x === 3){
+		return 1
+	}else if(o === 3){
+		return 2 
+	}
+	else return 0 ;
+	
+}
+
+
+function checkCol(colIndex , board){
+	var x= 0 ;
+	var o = 0 ; 
+	for (var i = 0; i<board.length; i++) {
+		if(board[i][colIndex]=== 1){
+			x++
+		}
+		if(board[i][colIndex]===2){
+			o++
+		}
+	}
+	if(x === 3){
+		return 1
+	}else if(o === 3){
+		return 2 
+	}
+	else return 0 ;
+}
+
+
+function majorDiagonal(board){
+	var x = 0 ;
+	var o = 0 ;
+	for (var i = 0; i < board.length; i++) {
+		if(board[i][i] === 1){
+			x++
+		}
+
+		if(board[i][i] === 2){
+			o++
+		}
+	}
+
+	if(x === 3){
+		return 1
+	}else if(o === 3){
+		return 2 
+	}
+	else return 0 ;
+}
+
+
+function minorDiagonal(board){
+	var x = 0 ;
+	var o = 0 ;
+	for (var i = board.length - 1 , j =0 ; i >= 0 , j < board.length ; i-- , j++) {
+		
+		if(board[j][i] === 1){
+			x++
+		}
+
+		if(board[j][i] === 2){
+			o++
+		}
+		
+	}
+
+	if(x === 3){
+		return 1
+	}else if(o === 3){
+		return 2 
+	}
+	else return 0 ;
+}
