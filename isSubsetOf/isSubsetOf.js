@@ -23,6 +23,7 @@
 */
 
 Array.prototype.isSubsetOf = function (arr) {
+<<<<<<< HEAD
 	var cnt = 0 ;
 	var str1 = JSON.stringify(arr);
 	var str2 = JSON.stringify(this)
@@ -35,4 +36,7 @@ Array.prototype.isSubsetOf = function (arr) {
 		return true ;
 	}
 	return false 
+=======
+
+>>>>>>> 489641d63aec9a4741e9d52eb49286a5629cb485
 }
