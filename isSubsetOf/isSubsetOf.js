@@ -24,6 +24,7 @@
 
 Array.prototype.isSubsetOf = function (arr) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	var cnt = 0 ;
 	var str1 = JSON.stringify(arr);
 	var str2 = JSON.stringify(this)
@@ -39,4 +40,7 @@ Array.prototype.isSubsetOf = function (arr) {
 =======
 
 >>>>>>> 489641d63aec9a4741e9d52eb49286a5629cb485
+=======
+
+>>>>>>> ec1197ded368e7aad2cc2c29d5059a3905f42645
 }
