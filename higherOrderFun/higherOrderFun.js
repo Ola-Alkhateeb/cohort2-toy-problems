@@ -45,10 +45,10 @@ Please see example usage to understand what should be passed to the callback.
 var asyncSum = function(a,b,callback){
 var result  = a+b ;
 		if(typeof a !== 'number' || typeof b !== 'number'){
-			return callback("a or b is not a number " , result )
+			 callback("a or b is not a number " , result )
 		}else  {
 	 setTimeout (function(){
-			return callback(null ,result)
+			 callback(null ,result)
 		
 	} , 1000 )}
 };
